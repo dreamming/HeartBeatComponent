@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>dmz</title>
+    <link rel="icon" href="./cat.png" type="image/x-icon" />
+    <meta charset="utf-8">
+    <style>
+        /* #mainCanvas {  
+            height: 100%; width: 100%;
+            overflow:hidden;
+            }   */
+
+        body {
+            background-color: #BABCA7;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .spinner-top {
+            position: absolute;
+            top: 30%;
+            left: 1%;
+            margin-top: -50px;
+            margin-left: 30px;
+            width: 100px;
+            height: 100px;
+        }
+
+        .spinner-bottom {
+            position: absolute;
+            bottom: 30%;
+            right: 1%;
+            margin-bottom: -50px;
+            margin-left: -50px;
+            width: 100px;
+            height: 100px;
+        }
+
+        .la-ball-scale-pulse,
+        .la-ball-scale-pulse>div {
+            position: relative;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box
+        }
+
+        .la-ball-scale-pulse {
+            display: block;
+            font-size: 100%;
+            color: #fff
+        }
+
+        .la-ball-scale-pulse.la-dark {
+            color: #333
+        }
+
+        .la-ball-scale-pulse>div {
+            display: inline-block;
+            float: none;
+            background-color: currentColor;
+            border: 0 solid currentColor
+        }
+
+        .la-ball-scale-pulse {
+            width: 32px;
+            height: 32px
+        }
+
+        .la-ball-scale-pulse>div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 32px;
+            height: 32px;
+            border-radius: 100%;
+            opacity: .5;
+            -webkit-animation: ball-scale-pulse 2s infinite ease-in-out;
+            -moz-animation: ball-scale-pulse 2s infinite ease-in-out;
+            -o-animation: ball-scale-pulse 2s infinite ease-in-out;
+            animation: ball-scale-pulse 2s infinite ease-in-out
+        }
+
+        .la-ball-scale-pulse>div:last-child {
+            -webkit-animation-delay: -1.0s;
+            -moz-animation-delay: -1.0s;
+            -o-animation-delay: -1.0s;
+            animation-delay: -1.0s
+        }
+
+        .la-ball-scale-pulse.la-sm {
+            width: 16px;
+            height: 16px
+        }
+
+        .la-ball-scale-pulse.la-sm>div {
+            width: 16px;
+            height: 16px
+        }
+
+        .la-ball-scale-pulse.la-2x {
+            width: 64px;
+            height: 64px
+        }
+
+        .la-ball-scale-pulse.la-2x>div {
+            width: 64px;
+            height: 64px
+        }
+
+        .la-ball-scale-pulse.la-3x {
+            width: 96px;
+            height: 96px
+        }
+
+        .la-ball-scale-pulse.la-3x>div {
+            width: 96px;
+            height: 96px
+        }
+
+        @-webkit-keyframes ball-scale-pulse {
+            0%,
+            100% {
+                -webkit-transform: scale(0);
+                transform: scale(0)
+            }
+            50% {
+                -webkit-transform: scale(1);
+                transform: scale(1)
+            }
+        }
+
+        @-moz-keyframes ball-scale-pulse {
+            0%,
+            100% {
+                -moz-transform: scale(0);
+                transform: scale(0)
+            }
+            50% {
+                -moz-transform: scale(1);
+                transform: scale(1)
+            }
+        }
+
+        @-o-keyframes ball-scale-pulse {
+            0%,
+            100% {
+                -o-transform: scale(0);
+                transform: scale(0)
+            }
+            50% {
+                -o-transform: scale(1);
+                transform: scale(1)
+            }
+        }
+
+        @keyframes ball-scale-pulse {
+            0%,
+            100% {
+                -webkit-transform: scale(0);
+                -moz-transform: scale(0);
+                -o-transform: scale(0);
+                transform: scale(0)
+            }
+            50% {
+                -webkit-transform: scale(1);
+                -moz-transform: scale(1);
+                -o-transform: scale(1);
+                transform: scale(1)
+            }
+        }
+    </style>
+    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet"> -->
+</head>
+
+<body>
+
+    <div id="content">
+        <canvas id="mainCanvas"></canvas>
+        <div class="spinner-top">
+            <div class="la-ball-scale-pulse la-3x">
+                <span>Mark</span>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <div class="spinner-bottom">
+            <div class="la-ball-scale-pulse la-3x">
+                <span>Love Mary !</span>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <noscript>
+            <div style="color:red; margin-top:100px; text-align:center;margin:100px auto; width: 80%; border:2px solid red;padding: 20px; background-color: pink; border-radius: 25px;">
+                Javascript is disabled on your browser. This web application won't run until Javascript is enabled.
+            </div>
+        </noscript>
+    </div>
+
+
+
+    <script>
+        (function () {
+            function w() {
+                h.globalCompositeOperation = "source-over"; h.fillStyle = "rgba(187,120,139," + v + ")"; h.fillRect(0, 0, f, k); h.globalCompositeOperation = "lighter"; .75 > v && (v += .05); D = s - x; E = t - y; x = s; y = t; for (var a = f / 1.15, l = f / 8, p = f / 2, r = Math.random, F = Math.abs, w = Math.sqrt, A = Math.cos, B = Math.sin, C = Math.atan2, G = 1350; G--;) {
+                    var e = H[G], g = e.x, c = e.y, d = e.vX, b = e.vY, q = g - s, m = c - t, n = w(q * q + m * m), m = C(m, q), q = A(m), m = B(m); if (z && n < p) var u = 14 * (1 - n / p), d = d + (q * u + .5 - r()), b = b + (m * u + .5 - r()); n < a && (u = (1 - n / a) * f * .0014, d -= q * u, b -= m * u); n < l && (n = (1 -
+                        n / l) * f * 2.2E-4, d += D * n, b += E * n); d *= .96; b *= .96; F(d); F(b); g += d; c += b; g > f ? g -= f : 0 > g && (g = f + g); c > k ? c -= k : 0 > c && (c = k + c); e.vX = d; e.vY = b; e.x = g; e.y = c; d = e; b = g / f * Math.PI * 2; c = c / k * Math.PI; b = { theta: b, phi: c, x: -100 * Math.sin(c) * Math.sin(b), y: -100 * Math.cos(c), z: -100 * Math.sin(c) * Math.cos(b) }; d.pos3D = b; e.pos3D.z -= 200; -299 > e.pos3D.z || (d = 300 / (300 + e.pos3D.z), b = e.pos3D.x * d + f / 2, c = e.pos3D.y * d + k / 2, h.fillStyle = e.color, h.beginPath(), h.arc(b, c, d, 0, I, !0), h.closePath(), h.fill())
+                }
+            } function r(a) {
+                f = document.documentElement.clientWidth; k = document.documentElement.clientHeight;
+                p.width = f; p.height = k
+            } function A(a) { a = a ? a : window.event; s = x = a.pageX; t = y = a.pageY; document.onmousemove = B } function B(a) { a = a ? a : window.event; s = a.pageX; t = a.pageY } function C(a) { z = !0; return !1 } function J(a) { return z = !1 } function K() { this.color = "rgb(" + Math.floor(255 * Math.random()) + "," + Math.floor(255 * Math.random()) + "," + Math.floor(255 * Math.random()) + ")"; this.size = this.vY = this.vX = this.x = this.y = 0; this.pos3D = { x: 0, y: 0, z: 100 } } var p, h, f = 1E3, k = 560, H = [], I = 2 * Math.PI, v = 0, s, t, D = 0, E = 0, x = 0, y = 0, z = !1; window.onload = function () {
+                p =
+                    document.getElementById("mainCanvas"); if (p.getContext) { document.getElementById("outer"); document.getElementById("canvasContainer"); h = p.getContext("2d"); window.moveTo(0, 0); window.resizeTo(screen.width, screen.height); r(null); for (var a = 1350; a--;) { var l = new K; l.x = .5 * f; l.y = .5 * k; l.vX = Math.cos(a) * Math.random() * 40; l.vY = Math.sin(a) * Math.random() * 20; l.size = 2; H[a] = l } document.onmousedown = C; document.onmouseup = J; document.onmousemove = A; window.onresize = r; r(null); setInterval(w, 33) }
+            }
+        })();
+    </script>
+</body>
+
+</html>
